@@ -160,7 +160,9 @@ public class AddressAnalyzeService {
                         if (StringUtils.isNotBlank(result.getCountyName())) {
                             endIndex = 2;
                         } else {
+                            String failMsg = String.format("解析区县失败: %s, 地址: %s, 分词: %s", splits.get(1), address, splits.toString());
                             log.error("解析区县失败: {}, 地址: {}, 分词: {}", splits.get(1), address, splits.toString());
+                            result.setFailMsg(failMsg);
                         }
                     }
                 } else {
@@ -168,7 +170,9 @@ public class AddressAnalyzeService {
                     if (StringUtils.isNotBlank(result.getCountyName())) {
                         endIndex = 2;
                     } else {
+                        String failMsg = String.format("解析区县失败: %s, 地址: %s, 分词: %s", splits.get(2), address, splits.toString());
                         log.error("解析区县失败: {}, 地址: {}, 分词: {}", splits.get(2), address, splits.toString());
+                        result.setFailMsg(failMsg);
                     }
                 }
             }
@@ -182,7 +186,9 @@ public class AddressAnalyzeService {
                 result.setDetail(address.substring(address.indexOf(result.getRegex()) + result.getRegex().length()));
                 return result;
             }
+            String failMsg = String.format("解析地址失败: %s, 分词: %s", address, splits.toString());
             log.error("解析地址失败: {}, 分词: {}", address, splits.toString());
+            result.setFailMsg(failMsg);
             return null;
         }
         return result;

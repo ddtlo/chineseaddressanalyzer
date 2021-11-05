@@ -57,4 +57,9 @@ public class AddressDetailDto implements Serializable {
      * 匹配器
      */
     private String regex;
+
+    /**
+     * 失败原因
+     */
+    private String failMsg;
 }

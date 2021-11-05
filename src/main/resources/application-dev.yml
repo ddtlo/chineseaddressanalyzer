@@ -4,9 +4,9 @@ spring:
   application:
     name: ChineseAddressAnalyzer
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/chineseaddressanlyzer?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
-    username: root
-    password: root
+    url: jdbc:mysql://rm-uf656rcueks797xsg9o.mysql.rds.aliyuncs.com:3306/buguanjia_dev?allowPublicKeyRetrieval=true&serverTimezone=GMT%2B8&useSSL=false&characterEncoding=UTF-8&allowMultiQueries=true
+    username: bgj_dev
+    password: "6hg%D6tk&R0C@9K#W"
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
